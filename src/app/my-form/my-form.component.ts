@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-my-form',
@@ -8,12 +8,16 @@ import { NgForm } from '@angular/forms';
 })
 export class MyFormComponent {
 
-  public loginModel:{email:string,password:string}={email:'',password:''};
 
-  submit(data: NgForm){
-    console.log(">>>>>>>>>>>>>>>>")
-    console.log(data)
-    console.log(">>>>>>>>>>>>>>>>")
+  public loginFormGroup=new FormGroup({
+    email:new FormControl(''),
+    password:new FormControl('')
+  })
+
+  onSubmit(){
+    console.log(">>>>>>>>>>>>>>>>");
+    console.log(this.loginFormGroup.value);
+    console.log(">>>>>>>>>>>>>>>>");
   }
 
 }

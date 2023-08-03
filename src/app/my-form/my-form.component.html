@@ -1,13 +1,12 @@
-<p>{{loginModel |json}}</p>
 
-<form #myForm="ngForm" (ngSubmit)="submit(myForm.value)" >
+<form [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()" >
   <div>
     <label for="email">Email</label>
-    <input [(ngModel)]="loginModel.email" id="email" name="email" type="text" placeholder="Email" >
+    <input formControlName="email" id="email"  type="text" placeholder="Email" >
   </div>
   <div>
     <label for="password">Password</label>
-    <input [(ngModel)]="loginModel.password" id="password" name="password" type="password" placeholder="Password" >
+    <input formControlName="email" id="password" type="password" placeholder="Password" >
   </div>
   <button type="submit" >Submit</button>
 </form>
