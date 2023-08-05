@@ -6,7 +6,7 @@
   </div>
   <div>
     <label for="password">Password</label>
-    <input formControlName="email" id="password" type="password" placeholder="Password" >
+    <input formControlName="password" id="password" type="password" placeholder="Password" >
   </div>
-  <button type="submit" >Submit</button>
+  <button type="submit" [disabled]="loginFormGroup.invalid" >Submit</button>
 </form>

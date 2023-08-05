@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-my-form',
@@ -10,8 +10,8 @@ export class MyFormComponent {
 
 
   public loginFormGroup=new FormGroup({
-    email:new FormControl(''),
-    password:new FormControl('')
+    email:new FormControl('',[Validators.pattern(/(([\w+\.])+([\+])?\w+\+?)+\@\w+(\.\w+){1,}/gmi),Validators.required]),
+    password:new FormControl('',[Validators.minLength(6),Validators.required])
   })
 
   onSubmit(){
