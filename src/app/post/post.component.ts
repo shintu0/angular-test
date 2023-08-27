@@ -8,12 +8,14 @@ import { Component, Input } from '@angular/core';
 export class PostComponent {
 
   public title:string='List of Posts';
+  public message:any;
   @Input() public dataFromParent:string='';
   public dataForChild="From post to post-list";
 
-  getChildData(event:Event):void{
+  getChildData(eventEmitData:any):void{
     console.log(">>>>>>>>>>>EVENT in Parent>>>>>>>>>>>>>>")
-    console.log(event)
+    console.log(eventEmitData);
+    this.message=eventEmitData.message;
     console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
   }
 
