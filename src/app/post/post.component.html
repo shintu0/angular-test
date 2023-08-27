@@ -2,4 +2,4 @@
 <h3>{{title}}</h3>
 <p>Data from Parent: {{dataFromParent}}</p>
 <hr>
-<app-post-list [dataFromParent]="dataForChild" ></app-post-list>
+<app-post-list [dataFromParent]="dataForChild" (messageEvent)="getChildData($event)" ></app-post-list>

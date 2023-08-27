@@ -11,4 +11,10 @@ export class PostComponent {
   @Input() public dataFromParent:string='';
   public dataForChild="From post to post-list";
 
+  getChildData(event:Event):void{
+    console.log(">>>>>>>>>>>EVENT in Parent>>>>>>>>>>>>>>")
+    console.log(event)
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+  }
+
 }
