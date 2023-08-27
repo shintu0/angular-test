@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-test';
+  public dataForChild="Some Data from Parent";
 }
