@@ -20,8 +20,10 @@ export class AppComponent {
   }
 
   ngAfterContentChecked(): void {
-    alert(this.userService.getLoginUser().name);
-    alert(this.postService.getPost().title);
+    // Service
+    // alert(this.userService.getLoginUser().name);
+    // alert(this.postService.getPost().title);
+
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     //Add 'implements AfterViewInit' to the class.
     // console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");

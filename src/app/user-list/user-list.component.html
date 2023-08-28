@@ -1,14 +1,14 @@
 <div style="display: flex; flex-direction: column;justify-content: center;align-items: center;">
   <h2>User Form</h2>
 
-  <form (submit)="onAddUser()"
+  <form #userFormTemplate="ngForm" (submit)="onAddUser(userFormTemplate)"
     style="display: flex; flex-direction: column;height: max-content;justify-content: space-between;">
     <h3 class="form-item">User Details</h3>
-    <input type="text" name="name" class="form-item" [(ngModel)]="userForm.name" placeholder="Enter Name">
-    <input type="text" name="email" class="form-item" [(ngModel)]="userForm.email" placeholder="Enter Email">
-    <textarea class="form-item" [(ngModel)]="userForm.address" name="address" placeholder="Enter Address" cols="30"
-      rows="10"></textarea>
-    <button class="form-item" type="submit">Add</button>
+    <input type="text" name="name" class="form-item" ngModel placeholder="Enter Name" required (change)="onChange(userFormTemplate)" >
+    <input type="email" name="email" class="form-item" ngModel placeholder="Enter Email" required >
+    <textarea class="form-item" ngModel name="address" placeholder="Enter Address" cols="30"
+      rows="10"  ></textarea>
+    <button [disabled]="userFormTemplate.invalid" class="form-item" type="submit">Add</button>
   </form>
 </div>
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 type User={
   name:string,
@@ -20,17 +21,19 @@ export class UserListComponent {
   }
   public userList:User[]=[];
 
-  onAddUser(){
-    this.userList.push(this.userForm);
-    this.userForm={
-      name:'',
-      email:'',
-      address:''
-    }
+  onAddUser(form:NgForm){
+    console.table(form.value);
+    const {name,email,address}=form.value;
+    this.userList.push({name,email,address});
+    form.reset();
   }
 
   onRemoveUser(index:number){
     this.userList=this.userList.filter((e:User,i:number)=>i!==index);
+  }
+
+  onChange(form:NgForm){
+    console.log(form);
   }
 
 
