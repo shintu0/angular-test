@@ -1,0 +1,18 @@
+<h1>
+  Post View and Form
+</h1>
+
+<div class="container" >
+  <div><h3>Post Title</h3> <input [(ngModel)]="post.title" /></div>
+  <div><h3>Post Details</h3> <textarea [(ngModel)]="post.postDetail" ></textarea></div>
+  <div><h3>Post Image Url</h3> <input [(ngModel)]="post.postImageUrl" /></div>
+  <div><h3>Post Details Url</h3> <input [(ngModel)]="post.postLink" /></div>
+  <div><h3>Post Image Url</h3> <input type="checkbox" [(ngModel)]="post.viewBackground" /></div>
+</div>
+
+<div class="container">
+  <h3 [class.view-bg]="post.viewBackground" >{{post.title}}</h3>
+  <h4  style="width: 100px;" >{{post.postDetail}}</h4>
+  <img [src]="post.postImageUrl" alt="Post Image" [style.display]="post.postImageUrl?null:'none'" style="height: 300px; width: 300px;">
+  <a href="{{post.postLink}}">View</a>
+</div>
