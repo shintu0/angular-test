@@ -1,0 +1,40 @@
+<div style="display: flex; flex-direction: column;justify-content: center;align-items: center;">
+  <h2>User Form</h2>
+
+  <form (submit)="onAddUser()"
+    style="display: flex; flex-direction: column;height: max-content;justify-content: space-between;">
+    <h3 class="form-item">User Details</h3>
+    <input type="text" name="name" class="form-item" [(ngModel)]="userForm.name" placeholder="Enter Name">
+    <input type="text" name="email" class="form-item" [(ngModel)]="userForm.email" placeholder="Enter Email">
+    <textarea class="form-item" [(ngModel)]="userForm.address" name="address" placeholder="Enter Address" cols="30"
+      rows="10"></textarea>
+    <button class="form-item" type="submit">Add</button>
+  </form>
+</div>
+
+<div style="display: flex; flex-direction: column;justify-content: center;align-items: center;">
+  <table width='500' >
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="userList.length>0" >
+      <tr *ngFor="let user of userList;let i=index;">
+        <td>{{i+1}}</td>
+        <td  >{{user.name}}</td>
+        <td  >{{user.email}}</td>
+        <td  >{{user.address}}</td>
+        <td  >
+          <button (click)="onRemoveUser(i)" >Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>

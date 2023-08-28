@@ -8,6 +8,7 @@ import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostViewFormComponent } from './post-view-form/post-view-form.component';
 import { FormsModule } from '@angular/forms';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     PostComponent,
     PostListComponent,
-    PostViewFormComponent
+    PostViewFormComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
