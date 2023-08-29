@@ -1,0 +1,40 @@
+<form [formGroup]="reactiveFormGroup" class="container" (submit)="onSubmit()" >
+
+  <div class="mb-3 form-group">
+    <input formControlName="fullName" type="text" class="form-control" placeholder="Enter Full Name">
+  </div>
+  <div *ngIf="reactiveFormGroup.get('fullName')?.errors && reactiveFormGroup.get('fullName')?.touched" class="alert alert-danger" role="alert">
+    Please enter Full Name
+  </div>
+
+  <div class="mb-3 form-group">
+
+    <input formControlName="email" type="email" class="form-control" placeholder="Enter Email">
+  </div>
+  <div *ngIf="reactiveFormGroup.get('email')?.errors && reactiveFormGroup.get('email')?.touched" class="alert alert-danger" role="alert">
+    Please enter Email
+  </div>
+
+  <div formGroupName="contactDetails">
+
+    <div class="mb-3 form-group">
+
+      <textarea formControlName="permanentAddress" cols="30" class="form-control" placeholder="Enter Permanent Address"
+        rows="10"></textarea>
+    </div>
+    <div class="mb-3 form-group">
+
+      <textarea formControlName="currentAddress" cols="30" class="form-control" placeholder="Enter Current Address"
+        rows="10"></textarea>
+    </div>
+  </div>
+
+  <div class="mb-3 form-group">
+
+    <input #skill type="text" class="form-control" placeholder="Enter Your Skill" (keyup.enter)="onAddSkills(skill)">
+  </div>
+
+  <button type="submit">Submit</button>
+
+
+</form>
