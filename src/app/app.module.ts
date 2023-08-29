@@ -10,6 +10,7 @@ import { PostViewFormComponent } from './post-view-form/post-view-form.component
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { UserListComponent } from './user-list/user-list.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { ReactiveFormBuilderComponent } from './reactive-form-builder/reactive-form-builder.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     PostListComponent,
     PostViewFormComponent,
     UserListComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ReactiveFormBuilderComponent
   ],
   imports: [
     BrowserModule,
