@@ -11,6 +11,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { UserListComponent } from './user-list/user-list.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ReactiveFormBuilderComponent } from './reactive-form-builder/reactive-form-builder.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReactiveFormBuilderComponent } from './reactive-form-builder/reactive-f
     PostViewFormComponent,
     UserListComponent,
     ReactiveFormComponent,
-    ReactiveFormBuilderComponent
+    ReactiveFormBuilderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
